@@ -1,0 +1,139 @@
+/* Reset default margin dan padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styling body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container utama */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Judul */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Tombol Reset Data */
+#resetData {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#resetData:hover {
+  background-color: #c82333;
+}
+
+/* Daftar tugas */
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f9f9f9;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 5px solid transparent; /* Warna jenis tugas */
+}
+
+li.biasa {
+  border-left-color: #198efb; /* Hijau untuk Tugas Biasa */
+}
+
+li.praktikum {
+  border-left-color: #ffc107; /* Kuning untuk Tugas Praktikum */
+}
+
+li.besar {
+  border-left-color: #dc3545; /* Merah untuk Tugas Besar */
+}
+
+li.near-deadline {
+  background-color: #ffebee; /* Highlight merah muda untuk deadline dekat */
+}
+
+li div {
+  flex: 1;
+}
+
+li button.edit {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+li button.edit:hover {
+  background-color: #0056b3;
+}
+
+li button.delete {
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+li button.delete:hover {
+  background-color: #c82333;
+}
