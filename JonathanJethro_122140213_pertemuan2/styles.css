@@ -1,0 +1,179 @@
+/* Reset default margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Styling body */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  /* Container utama */
+  .container {
+    max-width: 600px;
+    width: 100%;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Animasi fade-in */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Judul */
+  h1 {
+    text-align: center;
+    color: #4a90e2;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Form */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input, select, button {
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus, select:focus {
+    border-color: #4a90e2;
+    outline: none;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+  }
+  
+  button {
+    background: #4a90e2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background: #357abd;
+    transform: scale(1.05);
+  }
+  
+  /* Daftar tugas */
+  h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 1.5rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background: #f9f9f9;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  li.rendah {
+    border-left-color: #4caf50; /* Hijau */
+  }
+  
+  li.sedang {
+    border-left-color: #ff9800; /* Oranye */
+  }
+  
+  li.tinggi {
+    border-left-color: #f44336; /* Merah */
+  }
+  
+  li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  li div {
+    flex: 1;
+  }
+  
+  li strong {
+    font-size: 1.1rem;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  li small {
+    color: #777;
+    font-size: 0.9rem;
+  }
+  
+  li button {
+    background: #f44336;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  li button:hover {
+    background: #d32f2f;
+    transform: scale(1.1);
+  }
+  
+  /* Responsif */
+  @media (max-width: 600px) {
+    .container {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 1.7rem;
+    }
+  
+    input, select, button {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  
+    li {
+      padding: 12px;
+    }
+    
+  }
