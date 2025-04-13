@@ -11,27 +11,29 @@ Pengguna dapat mengubah informasi tugas yang sudah ada (opsional, dapat diimplem
 Pengguna dapat menghapus tugas yang sudah selesai atau tidak relevan.
 //Lihat Daftar Tugas :
 Daftar tugas ditampilkan secara dinamis dalam bentuk tabel atau daftar dengan informasi lengkap seperti nama, deadline, dan prioritas.
-//Highlight Tugas Mendekati Deadline :
-Tugas dengan deadline kurang dari 3 hari akan ditandai dengan warna latar belakang khusus untuk memberikan peringatan visual.
+//Reset Data :
+Menghapus semua data yang berada di daftar tugas.
 //Simpan Data Secara Lokal :
 Semua data tugas disimpan menggunakan localStorage sehingga tetap ada meskipun browser ditutup atau halaman direfresh.
 
 ss aplikasi yang sudah jadi :
-![image](https://github.com/user-attachments/assets/820b0c8d-62c7-409b-9a69-bfb58c993274)
-![image](https://github.com/user-attachments/assets/c41726b1-cb6d-4dac-881b-1ba4421f2435)
+![image](https://github.com/user-attachments/assets/5ad82521-e7fd-41f2-a41e-f519bdc7f547)
+
 
 
 Daftar fitur ES6+ yang diimplementasikan:
 //let dan const :
 Digunakan dalam javascript untuk mendeklarasikan variabel dengan cakupan blok (let) dan konstanta (const).
-const taskForm = document.getElementById('taskForm');
-let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+const taskManager = new TaskManager();
+let today = new Date();
 
 //Arrow Functions :
 Digunakan untuk membuat fungsi anonim dengan sintaks yang lebih ringkas.
-const addTask = (task) => {
-  tasks.push(task);
-  saveTasks();
+const addTask = () => {
+  // Logika untuk menambahkan tugas
+  };
+const deleteTask = (id) => {
+  taskManager.deleteTask(id);
   renderTasks();
 };
 
@@ -39,28 +41,51 @@ const addTask = (task) => {
 Digunakan untuk membuat string dinamis dengan interpolasi variabel.
 li.innerHTML = `
   <div>
-    <strong>${task.name}</strong><br>
-    Deadline: ${task.deadline} | Prioritas: ${task.priority}
+    <strong>${task.name}</strong>
+    <p><em>Deadline:</em> ${task.deadline}</p>
   </div>
-  <button onclick="deleteTask('${task.id}')">Hapus</button>
 `;
 
 //Classes :
 Digunakan untuk merepresentasikan objek Task dengan properti seperti id, name, deadline, dan priority.
 class Task {
-  constructor(id, name, deadline, priority) {
+  constructor(id, name, deadline, type, completed = false) {
     this.id = id;
     this.name = name;
     this.deadline = deadline;
-    this.priority = priority;
+    this.type = type;
+    this.completed = completed;
   }
+}
+class TaskManager {
+  constructor() {
+    this.tasks = [];
+  }
+  addTask(task) {
+    this.tasks.push(task);
+    this.saveTasks();
+  }
+}
+
+//Destructuring Assignment
+Digunakan untuk mengekstrak nilai dari array atau objek ke dalam variabel terpisah.
+const { id, name, deadline } = task;
+console.log(`ID: ${id}, Nama: ${name}, Deadline: ${deadline}`);
+
+Default Parameters
+Digunakan untuk memberikan nilai default pada parameter fungsi jika tidak ada nilai yang diberikan.
+constructor(id, name, deadline, type, completed = false) {
+  this.completed = completed; // Nilai default: false
 }
 
 //Async/Await :
 Digunakan untuk simulasi proses asinkron seperti validasi server.
-await new Promise(resolve => setTimeout(resolve, 500));
+const checkDeadlines = async () => {
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  console.log('Pengecekan deadline selesai.');
+};
 
 //Local Storage API :
-Meskipun bukan fitur ES6+, tetap digunakan untuk menyimpan data secara lokal.
-localStorage.setItem('tasks', JSON.stringify(tasks));
+localStorage.setItem('tasks', JSON.stringify(this.tasks));
+const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
