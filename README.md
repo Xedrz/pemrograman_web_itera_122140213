@@ -18,6 +18,8 @@ Semua data tugas disimpan menggunakan localStorage sehingga tetap ada meskipun b
 
 ss aplikasi yang sudah jadi :
 ![image](https://github.com/user-attachments/assets/820b0c8d-62c7-409b-9a69-bfb58c993274)
+![image](https://github.com/user-attachments/assets/c41726b1-cb6d-4dac-881b-1ba4421f2435)
+
 
 Daftar fitur ES6+ yang diimplementasikan:
 //let dan const :
