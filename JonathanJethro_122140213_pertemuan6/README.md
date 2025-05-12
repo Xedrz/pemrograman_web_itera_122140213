@@ -1,22 +1,24 @@
-# Pyramid Matakuliah API 🐍
+# Pyramid Matakuliah API 
 
-## 🧪 Instalasi & Menjalankan Server
+## Instalasi & Menjalankan Server
 
 
 # Clone repositori
 ```
-git clone https://github.com/username/pyramid-matakuliah-api.git
+git clone https://github.com/Xedrz/pemrograman_web_itera_122140213.git
 ```
 ```
-cd pyramid-matakuliah-api
+cd pemrograman_web_itera_122140213
 ```
-
+```
+cd JonathanJethro_122140213_pertemuan6
+```
 # Buat virtual environment
 ```
 python -m venv venv
 ```
 ```
-source env/bin/activate  # atau env\Scripts\activate di Windows
+source venv/bin/activate  # atau venv\Scripts\activate di Windows
 ```
 # Install dependensi
 ```
