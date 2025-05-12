@@ -25,14 +25,14 @@ source venv/bin/activate  # atau venv\Scripts\activate di Windows
 pip install -e .
 ```
 # Setup database PostgreSQL (ganti sesuai konfigurasi)
-# Pastikan PostgreSQL aktif dan database sudah dibuat, misalnya: pyramid_mahasiswa
+Pastikan PostgreSQL aktif dan database sudah dibuat, misalnya: pyramid_mahasiswa
 
 # Edit development.ini
 ```
 nano development.ini
 ```
-# Ubah bagian:
-# sqlalchemy.url = postgresql://username:password@localhost:5432/pyramid_mahasiswa
+Ubah bagian:
+sqlalchemy.url = postgresql://username:password@localhost:5432/pyramid_mahasiswa
 # Inisialisasi migrasi database dengan Alembic
 ```
 alembic -c development.ini revision --autogenerate -m "create matakuliah table"
